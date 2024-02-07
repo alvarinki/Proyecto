@@ -1,0 +1,23 @@
+Que quiero que pueda hacer mi aplicación
+
+ Como padre/madre/tutor legal:
+
+
+ver faltas de su/sus hijos
+
+Responder a profesor cuando este le hable
+
+Leer notificaciones grupales enviadas por grupos de información de la clase y del instituto
+
+ver su horario
+
+
+Como profesor:
+
+Poner faltas
+
+Poner mensajes grupales en los grupos de sus clases
+
+Enviar mensajes a tutores legales de sus alumnos 
+
+ver su horario
