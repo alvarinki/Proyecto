@@ -1,0 +1,87 @@
+-- Tabla Profesor
+CREATE TABLE Profesor (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellidos VARCHAR(255),
+    usuario VARCHAR(255),
+    contrasena VARCHAR(255)
+);
+
+-- Tabla Alumno
+CREATE TABLE Alumno (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellidos VARCHAR(255),
+    tel_contacto VARCHAR(20),
+    tel_contacto2 VARCHAR(20),
+    domicilio VARCHAR(255),
+    id_curso INT,
+    FOREIGN KEY (id_curso) REFERENCES Curso(id)
+);
+
+-- Tabla Curso
+CREATE TABLE Curso (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255)
+);
+
+-- Tabla Horario
+CREATE TABLE Horario (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    id_curso INT,
+    dia VARCHAR(20),
+    hora INT,
+    asignatura VARCHAR(255),
+    id_profesor INT,
+    FOREIGN KEY (id_curso) REFERENCES Curso(id),
+    FOREIGN KEY (id_profesor) REFERENCES Profesor(ID)
+);
+
+-- Tabla Faltas
+CREATE TABLE Faltas (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    hora VARCHAR(20),
+    id_alumno INT,
+    fecha DATE,
+    id_profesor INT,
+    FOREIGN KEY (id_alumno) REFERENCES Alumno(ID),
+    FOREIGN KEY (id_profesor) REFERENCES Profesor(ID)
+);
+
+-- Tabla Tutor_legal
+CREATE TABLE Tutor_legal (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(255),
+    contrasena VARCHAR(255)
+);
+
+-- Tabla Chat
+CREATE TABLE Chat (
+    ID INT AUTO_INCREMENT PRIMARY KEY
+);
+
+-- Tabla Mensaje
+CREATE TABLE Mensaje (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    id_chat INT,
+    id_emisor INT,
+    fecha_envio DATETIME,
+    contenido TEXT,
+    FOREIGN KEY (id_chat) REFERENCES Chat(ID)
+);
+
+-- Tabla intermedia para relación N:M entre Profesor y Chat
+CREATE TABLE Profesor_Chat (
+    id_chat INT,
+    id_profesor INT,
+    FOREIGN KEY (id_chat) REFERENCES Chat(ID),
+    FOREIGN KEY (id_profesor) REFERENCES Profesor(ID)
+);
+
+-- Tabla intermedia para relación N:M entre Tutor_legal y Chat
+CREATE TABLE Tutor_Chat (
+    id_chat INT,
+    id_tutor INT,
+    FOREIGN KEY (id_chat) REFERENCES Chat(ID),
+    FOREIGN KEY (id_tutor) REFERENCES Tutor_legal(ID)
+);

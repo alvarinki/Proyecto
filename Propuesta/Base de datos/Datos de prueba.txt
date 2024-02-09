@@ -1,0 +1,44 @@
+-- Valores de muestra para la tabla Profesor
+INSERT INTO Profesor (nombre, apellidos, usuario, contrasena) VALUES
+('Juan', 'Martínez Pérez', 'juan.martinez', 'contrasena123'),
+('María', 'García López', 'maria.garcia', 'clave456'),
+('Pedro', 'Sánchez Rodríguez', 'pedro.sanchez', 'psw789');
+
+-- Valores de muestra para la tabla Alumno
+INSERT INTO Alumno (nombre, apellidos, tel_contacto, tel_contacto2, domicilio, id_curso) VALUES
+('Luis', 'Gómez Gutiérrez', '123456789', '987654321', 'Calle Mayor, 123', 1),
+('Ana', 'Fernández Pérez', '987654321', '123456789', 'Avenida Libertad, 456', 2),
+('Carlos', 'Ruiz García', '555555555', '666666666', 'Plaza España, 789', 3);
+
+-- Valores de muestra para la tabla Curso
+INSERT INTO Curso (nombre) VALUES
+('Matemáticas'),
+('Historia'),
+('Ciencias Naturales');
+
+-- Valores de muestra para la tabla Horario
+INSERT INTO Horario (id_curso, dia, hora, asignatura, id_profesor) VALUES
+(1, 'Lunes', 10, 'Álgebra', 1),
+(2, 'Martes', 11, 'Edad Media', 2),
+(3, 'Miércoles', 12, 'Biología', 3);
+
+-- Valores de muestra para la tabla Faltas
+INSERT INTO Faltas (hora, id_alumno, fecha, id_profesor) VALUES
+('08:00', 1, '2024-02-05', 1),
+('09:30', 2, '2024-02-06', 2),
+('11:15', 3, '2024-02-07', 3);
+
+-- Valores de muestra para la tabla Tutor_legal
+INSERT INTO Tutor_legal (usuario, contrasena) VALUES
+('tutor1', 'pass123'),
+('tutor2', 'pass456'),
+('tutor3', 'pass789');
+
+-- Valores de muestra para la tabla Chat
+INSERT INTO Chat () VALUES ();
+
+-- Valores de muestra para la tabla Mensaje
+INSERT INTO Mensaje (id_chat, id_emisor, fecha_envio, contenido) VALUES
+(1, 1, '2024-02-05 08:30:00', 'Hola, ¿cómo estás?'),
+(1, 2, '2024-02-05 08:35:00', 'Bien, gracias. ¿Y tú?'),
+(1, 1, '2024-02-05 08:40:00', 'También bien, gracias por preguntar.');
